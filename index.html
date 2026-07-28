@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClearPath | KWUST Online Student Clearance System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= LOADER ================= -->
+<div class="loader" id="loader">
+  <div class="loader-ring"></div>
+  <span class="loader-text">ClearPath</span>
+</div>
+
+<!-- ================= NAV ================= -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">CP</span>
+      <span class="brand-text">ClearPath <em>KWUST</em></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="dashboard.html" class="nav-link" id="dashNavLink">Dashboard</a></li>
+      <li><a href="#gallery" class="nav-link">Campus Life</a></li>
+      <li><a href="#team" class="nav-link">Team</a></li>
+    </ul>
+    <a href="#login" class="btn btn-nav" id="signInBtn">Sign in</a>
+    <button class="btn btn-nav btn-logout hidden" id="logoutBtn">Log out</button>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="home">
+  <div class="hero-bg">
+    <div class="blob blob-a"></div>
+    <div class="blob blob-b"></div>
+    <div class="grid-lines"></div>
+  </div>
+
+  <div class="hero-inner" id="top">
+    <!-- HERO BANNER IMAGE — swap the src below for your own photo -->
+    <div class="hero-banner reveal">
+      <img id="heroBannerImg" src="images/hero-study-group.jpg" alt="KWUST campus">
+      <div class="hero-banner-overlay"></div>
+      <span class="badge-live"><i></i>Live clearance tracking</span>
+    </div>
+
+    <div class="hero-copy reveal">
+      <p class="eyebrow">Kiriri Women's University of Science &amp; Technology</p>
+      <h1>Clearance, sorted <span class="highlight">in days</span> — not weeks of queueing.</h1>
+      <p class="hero-sub">One login. Six departments. Zero paper forms. Apply for clearance, track every approval live, and walk away with a QR‑verified certificate — all from your phone.</p>
+      <div class="hero-cta">
+        <a href="#login" class="btn btn-primary">Start my clearance</a>
+        <a href="#how" class="btn btn-ghost">See how it works</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-count="6">0</span><span class="stat-label">Departments online</span></div>
+        <div class="stat"><span class="stat-num" data-count="100">0</span><span class="stat-label">% Paperless</span></div>
+        <div class="stat"><span class="stat-num" data-count="24">0</span><span class="stat-label">Hrs real‑time tracking</span></div>
+      </div>
+    </div>
+
+    <!-- floating badges -->
+    <div class="floaters" aria-hidden="true">
+      <div class="float-chip chip-1">✅ Library cleared</div>
+      <div class="float-chip chip-2">🔔 Reminder sent</div>
+      <div class="float-chip chip-3">🧾 Receipt ready</div>
+      <div class="float-chip chip-4">📶 Live tracking</div>
+    </div>
+
+    <!-- floating photo cluster — swap the src attributes for real student photos -->
+    <div class="hero-photos reveal">
+  <figure class="photo-float photo-1">
+    <img src="images/student1.jpg" alt="Student photo">
+  </figure>
+  <figure class="photo-float photo-2">
+    <img src="images/student2.jpg" alt="Student photo">
+  </figure>
+  <figure class="photo-float photo-3">
+    <img src="images/student3.jpg" alt="Student photo">
+  </figure>
+  <figure class="photo-float photo-4">
+    <img src="images/student4.jpg" alt="Student photo">
+  </figure>
+</div>
+    </div>
+
+    <!-- login card -->
+    <div class="login-card reveal" id="login">
+      <div class="login-head">
+        <p class="login-welcome" id="welcomeText">Access your clearance</p>
+        <p class="login-sub" id="loginSub">One form gets you in — first time or returning, just fill this in.</p>
+      </div>
+
+      <form id="accessForm" class="login-form">
+        <label class="field">
+          <span>Full name</span>
+          <input type="text" id="accessName" placeholder="e.g. Ancyliz Karembo" required>
+        </label>
+        <label class="field">
+          <span>Admission / registration number</span>
+          <input type="text" id="accessReg" placeholder="e.g. DIT/225/25" required>
+        </label>
+        <label class="field">
+          <span>Department / course</span>
+          <input type="text" id="accessDept" placeholder="e.g. Information Technology">
+        </label>
+        <label class="field">
+          <span>Email</span>
+          <input type="email" id="accessEmail" placeholder="you@kwust.ac.ke" autocomplete="username" required>
+        </label>
+        <label class="field">
+          <span>Password</span>
+          <input type="password" id="accessPassword" placeholder="At least 6 characters" autocomplete="current-password" required minlength="6">
+        </label>
+        <button type="submit" class="btn btn-primary btn-block">Continue to dashboard</button>
+        <p class="login-hint" id="accessHint">Demo mode — Supabase isn't connected yet, any details work.</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="scroll-cue reveal"><span></span>Scroll</div>
+</header>
+
+<!-- ================= GALLERY SLIDER 1 ================= -->
+<section class="gallery" id="gallery">
+  <div class="section-head reveal">
+    <p class="eyebrow">Campus Life</p>
+    <h2>Real students. Real clearance stories.</h2>
+  </div>
+  <div class="slider" id="photoSlider">
+    <div class="slider-track" id="photoTrack">
+  <div class="slide"><img src="images/gallery1.jpg" alt="Students on campus"><span class="slide-cap">Graduation queue — now handled online</span></div>
+  <div class="slide"><img src="images/gallery2.jpg" alt="Students studying"><span class="slide-cap">Library clearance in two clicks</span></div>
+  <div class="slide"><img src="images/gallery3.jpg" alt="Students at hostel"><span class="slide-cap">Hostel checkout, no more chasing wardens</span></div>
+  <div class="slide"><img src="images/gallery4.jpg" alt="Students receiving certificate"><span class="slide-cap">QR‑verified certificate on completion</span></div>
+</div>
+    <button class="slide-btn prev" data-slider="photo" aria-label="Previous">‹</button>
+    <button class="slide-btn next" data-slider="photo" aria-label="Next">›</button>
+    <div class="slide-dots" id="photoDots"></div>
+  </div>
+  <p class="gallery-note">Photos shown are placeholders — swap in your own student photos any time.</p>
+</section>
+
+<!-- ================= HOW IT WORKS (public) ================= -->
+<section class="how-section" id="how">
+  <div class="how">
+    <div class="section-head reveal">
+      <p class="eyebrow">The whole journey</p>
+      <h2>How ClearPath takes you from application to certificate</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-step reveal">
+        <span class="tl-num">01</span>
+        <h3>Apply online</h3>
+        <p>Submit your clearance request in one form — no printed forms, no queueing at the registrar's office.</p>
+      </div>
+      <div class="tl-step reveal">
+        <span class="tl-num">02</span>
+        <h3>Departments review</h3>
+        <p>Finance, Library, Academics, Hostel, Games and the Registrar each approve or flag your request electronically.</p>
+      </div>
+      <div class="tl-step reveal">
+        <span class="tl-num">03</span>
+        <h3>Track &amp; get notified</h3>
+        <p>Real‑time alerts tell you the moment a department clears you — and automated reminders nudge any department that's slow.</p>
+      </div>
+      <div class="tl-step reveal">
+        <span class="tl-num">04</span>
+        <h3>Download your certificate</h3>
+        <p>Once every department signs off, a QR‑verified clearance certificate is generated instantly for graduation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURES (public) ================= -->
+<section class="features-section" id="features">
+  <div class="features">
+    <div class="section-head reveal">
+      <p class="eyebrow">Built for the whole campus</p>
+      <h2>Everything the manual process couldn't do</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">📡</div>
+        <h3>Real‑time notifications</h3>
+        <p>Get pinged the moment a department approves, rejects, or needs more information from you.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">⏰</div>
+        <h3>Automated reminders</h3>
+        <p>Departments sitting on a pending request get an automatic nudge so your file never goes cold.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🔳</div>
+        <h3>QR‑verified certificates</h3>
+        <p>Every finished clearance gets a unique QR code, so employers and the registrar can confirm it's genuine.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📊</div>
+        <h3>Live progress tracker</h3>
+        <p>See exactly which departments have cleared you and which are still pending — no more guessing.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🗂️</div>
+        <h3>Secure digital records</h3>
+        <p>Clearance history lives in one database instead of a paper file that can be lost or damaged.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📱</div>
+        <h3>Works on any device</h3>
+        <p>Apply, track and download your certificate from a phone, tablet or campus computer lab.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS SLIDER 2 ================= -->
+<section class="testimonials" id="team">
+  <div class="section-head reveal">
+    <p class="eyebrow">From the team behind ClearPath</p>
+    <h2>Built by four students who lived the queue</h2>
+  </div>
+  <div class="slider testi-slider" id="testiSlider">
+    <div class="slider-track" id="testiTrack">
+      <div class="slide testi-slide">
+        <p class="quote">“We started this project because we were tired of walking between six offices every semester. Watching the progress ring fill up instead feels like the future.”</p>
+        <div class="testi-who"><span class="avatar">AK</span><div><strong>Ancyliz Phine Karembo</strong><small>Project Lead &amp; System Design</small></div></div>
+      </div>
+      <div class="slide testi-slide">
+        <p class="quote">“Designing the database so every clearance record stays linked and accurate was the trickiest part — and the most satisfying to finally see working.”</p>
+        <div class="testi-who"><span class="avatar">CJ</span><div><strong>Cynthia Jepkirui</strong><small>Database &amp; Backend Logic</small></div></div>
+      </div>
+      <div class="slide testi-slide">
+        <p class="quote">“I wanted the interface to feel as calm as possible — clearance is stressful enough without a confusing screen. I'm proud of how the tracker turned out.”</p>
+        <div class="testi-who"><span class="avatar">MK</span><div><strong>Mary Kimotho</strong><small>UI Design &amp; Testing</small></div></div>
+      </div>
+      <div class="slide testi-slide">
+        <p class="quote">“Interviewing students and staff for our research shaped every screen in this system — it's built around what people actually struggled with.”</p>
+        <div class="testi-who"><span class="avatar">AN</span><div><strong>Anne Khasandi</strong><small>Research &amp; Documentation</small></div></div>
+      </div>
+    </div>
+    <button class="slide-btn prev" data-slider="testi" aria-label="Previous">‹</button>
+    <button class="slide-btn next" data-slider="testi" aria-label="Next">›</button>
+    <div class="slide-dots" id="testiDots"></div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta-band reveal">
+  <h2>Ready to skip the queue?</h2>
+  <p>Sign in above and see your clearance status update live.</p>
+  <a href="#login" class="btn btn-primary">Start my clearance</a>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark">CP</span>
+      <span class="brand-text">ClearPath <em>KWUST</em></span>
+      <p>Online Student Clearance System — Kiriri Women's University of Science &amp; Technology.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Departments</h4>
+      <a href="#departments">Finance</a>
+      <a href="#departments">Library</a>
+      <a href="#departments">Academic</a>
+      <a href="#departments">Hostel</a>
+      <a href="#departments">Games</a>
+      <a href="#departments">Registrar</a>
+    </div>
+    <div class="footer-col">
+      <h4>Project team</h4>
+      <span>Ancyliz Phine Karembo</span>
+      <span>Cynthia Jepkirui</span>
+      <span>Mary Kimotho</span>
+      <span>Anne Khasandi</span>
+    </div>
+    <div class="footer-col">
+      <h4>Get in touch</h4>
+      <span>Department of Information Technology</span>
+      <span>Kiriri Women's University of Science &amp; Technology</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 ClearPath — Diploma Project, Dept. of Information Technology.</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<button class="float-top" id="floatTop" aria-label="Back to top">↑</button>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>
